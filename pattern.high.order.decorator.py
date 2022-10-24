@@ -28,7 +28,11 @@ def nullsafe ( func: F ) -> F:
 def pow2( arg:Any ) -> Any:
     return arg*arg
 
+# using the decorator on a lambda function
+div2 = nullsafe(lambda x: x//2)
+
 print(tuple(map(pow2, (1,2,None,3,4,None,5))))
+print(tuple(map(div2, (1,2,None,3,4,None,5))))
 
 
 
