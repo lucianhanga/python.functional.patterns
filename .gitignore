@@ -50,3 +50,7 @@
 .mypy_cache/3.8/os/path.meta.json
 .mypy_cache/3.8/pattern/high/order/decorator.data.json
 .mypy_cache/3.8/pattern/high/order/decorator.meta.json
+.mypy_cache/3.8/array.data.json
+.mypy_cache/3.8/array.meta.json
+.mypy_cache/3.8/ctypes/__init__.data.json
+.mypy_cache/3.8/ctypes/__init__.meta.json

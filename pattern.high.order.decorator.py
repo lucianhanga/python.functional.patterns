@@ -1,6 +1,8 @@
 #
 # define a high-order function which behaves like a decorator
 #
+# decorators are good for cross-cutting concerns
+#
 # this example checks the paramter. if the parameter is None it returns
 # imediatelly None. If the parameter is not None call the original function
 #
@@ -14,7 +16,7 @@ F = TypeVar('F' , bound=Callable[..., Any])
 
 def nullsafe ( func: F ) -> F:    
     @wraps(func) # get the __name__ and __doc__ from the func
-    def nullsafe_wrapper( arg: Optional[Any] ) -> Optional[Any]:
+    def nullsafe_wrapper( arg: Optional[Any] = None) -> Optional[Any]:
         return None if arg is None else func(arg)
     return cast(F, nullsafe_wrapper)
 
@@ -34,5 +36,6 @@ div2 = nullsafe(lambda x: x//2)
 print(tuple(map(pow2, (1,2,None,3,4,None,5))))
 print(tuple(map(div2, (1,2,None,3,4,None,5))))
 
+print(div2())
 
 
