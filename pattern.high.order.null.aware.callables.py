@@ -1,4 +1,3 @@
-from ast import And
 from typing import Callable, Any, Iterator, Optional
 
 #
