@@ -271,3 +271,29 @@ print(counter(mysearchInBulgaria("Dalton", "male", data)))
 mysearchInBulgariaOla = mysearchInBulgaria("Ola")
 print(counter(mysearchInBulgariaOla("male", data)))
 
+
+#
+# currying by hand - with no decorator
+#
+#
+
+def f(x, *args):
+    def fx(y, *args):
+        def fxy(z):
+            return x+y+z
+        if args:
+            return fxy(*args)
+        return fxy
+    if args:
+        return fx(*args)
+    return fx
+
+print(f(1,2,3))
+f1 = f(1)
+print(f1(2,3))
+f1_6 = f1(6)
+print(f1_6(9))
+f4_5 = f(4,5)
+print(f4_5(5))
+
+
